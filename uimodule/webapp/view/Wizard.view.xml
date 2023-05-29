@@ -1,0 +1,193 @@
+ <mvc:View controllerName="com.ww.TaskManager.controller.Wizard"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc" xmlns:form="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:u="sap.ui.unified">
+  <Page showHeader="false" id="Wizard" >
+    <content>
+	  	<Wizard
+		id="CreatetheWizard"
+		finishButtonText="Finish"
+		class="sapUiResponsivePadding--header sapUiResponsivePadding--content">
+		<WizardStep id="PersonalInformation"
+				title="Personal Information"
+				activate="onActivate">
+			<Text text="Please Enter your Personal Information"/>
+			<form:SimpleForm editable="true">
+				<Label text="Enter Full name" required="true"/>
+				<Input valueStateText="Enter 6 symbols or more"
+						valueState="None" id="Personname"
+						change="validateProdInfoStep"
+						placeholder="Enter First Name" value="{WizardDetails>/wizardUp/firstname}"/>
+				<Label text="Enter last name" required="true"/>
+				<Input valueStateText="Enter digits"
+						valueState="None" id="Personlastname"
+						change="validateProdInfoStep"
+						placeholder="Enter last Name"
+						value="{WizardDetails>/wizardUp/lastname}"/>
+                <Label text="Phone Number" required="true"/>
+				<Input valueStateText="Enter digits"
+						valueState="None" id="Phone"
+						change="validateProdInfoStep"
+						type="Number" placeholder="there should 10 digits only"
+						value="{WizardDetails>/wizardUp/PhoneNo}"/>
+                <Label text="Email" required="true"/>
+				<Input valueStateText="Enter 6 symbols or more"
+						valueState="None"
+                        placeholder="Enter Email" id="Email"
+						change="validateProdInfoStep"
+						value="{WizardDetails>/wizardUp/Email}" />
+                                            
+                <Label text="Address"/>
+				<TextArea value="{WizardDetails>/wizardUp/address}" rows="8" id="address" valueState="None"/>
+			</form:SimpleForm>
+		</WizardStep>
+		<WizardStep id="ProfilePhoto"
+					optional="true"
+					title="Profile Photo"
+					activate="onActivate">
+			<Text text="Please upload your profile photo"/>
+			<form:SimpleForm
+					editable="true">
+				<Label text="Profile Photo"/>
+				<u:FileUploader
+						width="400px"
+						tooltip="Upload product cover photo to the local server"
+						style="Emphasized"
+						placeholder="Choose a file for Upload..."/>
+			</form:SimpleForm>
+		</WizardStep>
+		<WizardStep id="EducationalInformation"
+					title="Educational Information"
+					activate="onActivate">
+			<form:SimpleForm
+					editable="true">
+				<Label text="Institution" required="true"/>
+				<Input valueStateText="Enter Institution name"
+						valueState="None" id="institution"
+						change="validateProdInfoStep"
+						placeholder="Enter Institution Name" value="{WizardDetails>/wizardUp/Institution}"/>
+				<Label text="Degree"/>
+				<Select selectedKey="{/productManufacturer}" id="yoyo">
+				    <core:Item key="hanuman" text="Select"/>
+					<core:Item key="Apple" text="B-Tech"/>
+					<core:Item key="Microsoft" text="B-Com"/>
+					<core:Item key="Google" text="BE"/>
+					<core:Item key="Sony" text="M-Tech"/>
+					<core:Item key="Samsung" text="MBA"/>
+					<core:Item key="Logitech" text="MS"/>
+				</Select>		
+                <Label text="Major" required="true"/>
+				<Input valueStateText="Enter Field"
+						valueState="None" id="major"
+						change="validateProdInfoStep"
+						placeholder="Enter Your Majors"
+						value="{WizardDetails>/wizardUp/Major}"/>
+				<Label text="Joining date" required="true"/>
+				<DatePicker
+						id="joiningdate"
+						displayFormat="short"/>		                                                                                   
+
+			</form:SimpleForm>                                                                                                             
+
+		</WizardStep>
+
+		<WizardStep id="Skills"
+				title="Skills"
+				activate="onActivate">
+			<form:SimpleForm
+					editable="true">
+			  	<Label text="Skills" required="true"/>
+				<MultiComboBox>
+					<core:Item key="Children" text="Programming"/>
+					<core:Item key="Children" text="ML"/>
+					<core:Item key="Children" text="AI"/>
+					<core:Item key="Children" text="CNS"/>	
+				</MultiComboBox>
+				<Label text="Profiency Level" required="true"/>
+				<Input valueStateText="Enter 6 symbols or more"
+						valueState="None" id="profiencylevel"                                                                  
+						change="validateProdInfoStep"
+						placeholder="" value="{WizardDetails>/wizardUp/profiencylevel}"/>			                                                
+			</form:SimpleForm>
+		
+		</WizardStep> 
+		<WizardStep id="WorkExperience"
+				title="Work Experience"
+				activate="onActivate"
+				optional="true">
+			<Text text="Please Enter your Personal Information"/>
+			<form:SimpleForm editable="true">
+				<Label text="Company Name"/>
+				<Input valueStateText="Enter 6 symbols or more"
+						valueState="None" id="companyname"
+						change="validateProdInfoStep"
+						placeholder="Enter Company Name" value="{WizardDetails>/wizardUp/CompanyNo}"/>
+				<Label text="Job Title"/>
+				<Input valueStateText="Enter digits"
+						valueState="None" id="jobtitle"
+						change="validateProdInfoStep"
+						placeholder="Enter Job Title"
+						value="{WizardDetails>/wizardUp/JobTitle}"/>
+				<Label text="Employment Date"/>
+				<DatePicker
+						id="DP15"
+						displayFormat="short"/>			                                                         
+
+                <Label text="Responsibility"/>
+				<Input valueStateText="Enter 6 symbols or more"
+						valueState="None"
+                        placeholder="Enter your responsibilities" id="responsibility"
+						change="validateProdInfoStep"
+						value="{WizardDetails>/wizardUp/Responsibilities}" />
+			</form:SimpleForm>
+
+
+		</WizardStep>
+		<WizardStep id="others"
+					title="Others"
+					activate="onActivate"
+					optional="true">
+			<form:SimpleForm
+					editable="true">
+				<Label text="Certificate"/>
+				<u:FileUploader
+						width="400px"
+						tooltip="Upload product cover photo to the local server"
+						style="Emphasized"
+						placeholder="Choose a file for Upload..."/>
+				<Label text="Licences"/>
+				<MultiComboBox>
+				 <core:Item key="Children" text="Driving"/>
+				 <core:Item key="Children" text="PAN"/>
+				 <core:Item key="Children" text="Aadhaar"/>
+				 <core:Item key="Children" text="Voter"/>
+				</MultiComboBox>
+				
+				<Label text="Languages Spoken"/>
+                <MultiComboBox>
+				 <core:Item key="Child" text="Telugu"/>
+				 <core:Item key="Child" text="English"/>
+				 <core:Item key="Child" text="Hindi"/>
+				 <core:Item key="Child" text="Tamil"/>
+				</MultiComboBox>				                                                         
+		
+
+
+			</form:SimpleForm>
+			<Button type="Emphasized" text="Finish" press="onFinish" />
+			<FlexBox
+				      height="100px"
+				      alignItems="End"
+				      justifyContent="End">
+                      <Button type="Attention" text="Apply For Jobs" press="click"/> 				
+			</FlexBox> 
+			                                                                                                            
+                                                                                                            
+
+		</WizardStep>
+	</Wizard>
+    </content>
+  </Page>
+</mvc:View>

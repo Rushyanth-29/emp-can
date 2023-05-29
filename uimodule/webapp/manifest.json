@@ -1,0 +1,158 @@
+{
+  "_version": "1.42.0",
+  "sap.app": {
+    "id": "com.ww.TaskManager",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap-ux/fiori-freestyle-writer:basic",
+      "version": "0.14.9"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.102.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.ww.TaskManager.i18n.i18n"
+        }
+      },
+      "userDetails": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "WizardDetails": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "jobpost": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "jobpreview":{
+        "type": "sap.ui.model.json.JSONModel"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "com.ww.TaskManager.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteMainView",
+          "pattern": ":?query:",
+          "target": [
+            "TargetMainView"
+          ]
+        },
+        {
+          "name": "Wizard",
+          "pattern": "RouteWizard",
+          "target": [
+            "TargetWizard"
+          ]
+        },
+        {
+          "name": "signnext",
+          "pattern": "Routesignnext",
+          "target": [
+            "Targetsignnext"
+          ]
+        },
+        {
+          "name": "listOfJobs",
+          "pattern": "RoutelistOfJobs",
+          "target": [
+            "TargetlistOfJobs"
+          ]
+        },
+        {
+          "name": "detailpage",
+          "pattern": "detailpage/{docId}",
+          "target": [
+            "Targetdetailpage"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetMainView": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "MainView",
+          "viewName": "MainView"
+        },
+        "TargetWizard": {
+          "viewType": "XML",
+          "viewId": "Wizard",
+          "viewName": "Wizard"
+        },
+        "Targetsignnext": {
+          "viewType": "XML",
+          "viewId": "signnext",
+          "viewName": "signnext"
+        },
+        "TargetlistOfJobs": {
+          "viewType": "XML",
+          "viewId": "listOfJobs",
+          "viewName": "listOfJobs"
+        },
+        "Targetdetailpage": {
+          "viewType": "XML",
+          "viewId": "detailpage",
+          "viewName": "detailpage"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.ww.TaskManager.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

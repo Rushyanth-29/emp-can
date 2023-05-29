@@ -1,0 +1,52 @@
+<mvc:View controllerName="com.ww.TaskManager.controller.detailpage" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns="sap.m">
+    <Page title="Detailed view of job" id="detailpage">
+        <content>
+        
+      <l:VerticalLayout class="sapUiContentPadding" width="100%">
+            <Label text="Job title" required="true" labelFor="JobtitlePreview" />
+            <Text id="JobtitlePreview" text="{jobpreview>/Jobtitle}" />
+          
+            <Label text="Job type" required="true" labelFor="JobtypePreview" />
+            <Text id="JobtypePreview" text="{jobpreview>/jobtype}" />
+          
+       
+          
+            <Label text="Job description" required="true" labelFor="JobdescriptionPreview" />
+            <Text id="JobdescriptionPreview" text="{jobpreview>/jobdescription}" />
+          
+          
+            <Label text="Location" required="true" labelFor="locationPreview" />
+            <Text id="locationPreview" text="{jobpreview>/location}" />
+          
+          
+            <Label text="Application deadline" required="true" labelFor="deadlinePreview" />
+            <Text id="deadlinePreview" text="{jobpreview>/appdate}" />
+         
+            <Label text="Required qualifications and skills" required="true" labelFor="skillsPreview" />
+            <Text id="skillsPreview" text="{jobpreview>/reqqual}" />
+          
+          
+            <Label text="Company information" required="true" labelFor="compinfoPreview" />
+            <Text id="compinfoPreview" text="{jobpreview>/compinfo}" />
+        
+            <Label text="Department" required="true" labelFor="departmentPreview" />
+            <Text id="departmentPreview" text="{jobpreview>/department}" />
+         
+            <Label text="Vacancy" labelFor="vacancyPreview" />
+            <Text id="vacancyPreview" text="{jobpreview>/vacancy}" />
+            <FlexBox
+				      height="100px"
+				      alignItems="End"
+				      justifyContent="Center">
+				      <Button text="Apply" type="Success" class="sapUiSmallMarginEnd" />
+				
+			     </FlexBox>
+         
+      </l:VerticalLayout>
+           
+        
+        
+        
+        </content>
+    </Page>
+</mvc:View>

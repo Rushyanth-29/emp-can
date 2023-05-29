@@ -1,0 +1,14 @@
+<mvc:View controllerName="com.ww.TaskManager.controller.listOfJobs"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc" xmlns:fiori="sap.ui.webc.fiori" xmlns:tnt="sap.tnt" xmlns:core="sap.ui.core"	xmlns:l="sap.ui.layout">
+  <Page title="List Of Jobs Posted " id="listOfJobs">
+  <content>
+         <SearchField width="50%" search="onSearch" placeholder="Search Job title"/>
+         <List items="{jobpost>/jobs}" id="jobList">
+            <StandardListItem  type="Navigation" press="nav" title="{jobpost>Jobtitle}" class="sapMLabelBold" description="{jobpost>jobtype}"/>
+         </List>
+         
+</content>
+  </Page>
+</mvc:View>

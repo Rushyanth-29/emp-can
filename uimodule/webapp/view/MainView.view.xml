@@ -1,0 +1,53 @@
+
+
+
+<mvc:View controllerName="com.ww.TaskManager.controller.MainView" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+    <Page id="page" showHeader="false">
+        <content>
+		
+        <FlexBox alignItems="Center" direction="Column" justifyContent="Center" height="100%">
+		
+		
+		<FlexBox  alignItems="Center" direction="Row" justifyContent="Center">
+		<FlexBox  class="customLoginBackground" alignContent="Center" direction="Column" justifyContent="Center" height="100%">
+					<Carousel class="sapUiContentPadding" loop="true" width="1050px" >
+		<Image src=".\model\apple1.jpg" alt="Image of a Training skills" height="500px" width="900px"/>
+		<Image src=".\model\apple2.jpg" alt="Image of online course" height="500px" width="850px"/>
+		<Image src=".\model\apple3.jpg" alt="Image of speech" height="500px" width="850px"/>
+		<Image src=".\model\apple4.jpg" alt="Image of a Training,skills and Knowledge " height="500px" width="850px"/>
+	</Carousel>
+			</FlexBox>
+            <l:VerticalLayout class="sapUiContentPadding1">
+			
+            <Label text="E-mail" labelFor="emailInput" />
+        
+        	<Input
+			id="emailInput1"
+			class="sapUiSmallMarginBottom"
+            width="250px"
+			type="Email"
+			placeholder="Enter email"
+			valueStateText="E-mail must be a valid email address."
+			value="" />
+            <Label text="Password" labelFor="pwdInput" />
+        
+        	<Input
+			id="pwdInput"
+			class="sapUiSmallMarginBottom"
+            width="250px"
+			type="Password"
+			placeholder="Enter password"
+			valueStateText="E-mail must be a valid email address."
+			value="" />
+			
+        
+        	
+            <FlexBox alignItems="Center" justifyContent="Center">
+            <FlexBox class="a"><Button class="sapUiLargeMarginBottom1" type="Emphasized" text="Sign in" width="250px" press="onPressSignUp"/></FlexBox></FlexBox>
+            <FlexBox class="b"><Link class="sapUismallMarginBottom" text="I dont't have an account" press="onPressSignIn"></Link></FlexBox>
+            </l:VerticalLayout>
+			</FlexBox>
+			</FlexBox>
+        </content>
+    </Page>
+</mvc:View>

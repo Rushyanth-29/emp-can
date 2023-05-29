@@ -1,0 +1,79 @@
+ <mvc:View controllerName="com.ww.TaskManager.controller.signnext"
+  xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+  <Page showHeader="false" id="signnext" >
+    <content>
+    <FlexBox alignItems="Center" direction="Column" justifyContent="Center" height="100%">
+		
+		
+		<FlexBox  alignItems="Center" direction="Row" justifyContent="Center">
+		<FlexBox  class="customLoginBackground" alignContent="Center" direction="Column" justifyContent="Center" height="100%">
+					<Carousel class="sapUiContentPadding" loop="true" width="1050px" >
+		<Image src=".\model\apple1.jpg" alt="Image of a Training skills" height="500px" width="900px"/>
+		<Image src=".\model\apple2.jpg" alt="Image of online course" height="500px" width="850px"/>
+		<Image src=".\model\apple3.jpg" alt="Image of speech" height="500px" width="850px"/>
+		<Image src=".\model\apple4.jpg" alt="Image of a Training,skills and Knowledge " height="500px" width="850px"/>
+	</Carousel>
+			</FlexBox>
+            <l:VerticalLayout class="sapUiContentPadding1">
+            <Label text="Name" labelFor="nameInput" />
+        
+        	<Input
+			id="nameInput"
+			class="sapUiSmallMarginBottom"
+            width="250px"
+		
+			placeholder="Enter Name"
+			value="{userDetails>/SignUpDetails/name}"
+			valueState="None"
+			valueStateText="Name starts with capital"
+			
+			change="onNameChange" />
+           
+			
+            <Label text="E-mail" labelFor="emailInput" />
+        
+        	<Input
+			id="emailInput"
+			class="sapUiSmallMarginBottom"
+            width="250px"
+			type="Email"
+			placeholder="Enter email"
+			value="{userDetails>/SignUpDetails/email}"
+			valueState="None"
+			valueStateText="E-mail must be a valid email address."
+			
+			change="onEmailChange" />
+            <Label text="Password" labelFor="pwdInput" />
+        
+        	<Input
+			id="pwdInput"
+			class="sapUiSmallMarginBottom"
+            width="250px"
+			type="Password"
+			placeholder="Enter password"
+			value="{userDetails>/SignUpDetails/password}"
+			valueState="None"
+			valueStateText="Both password and confirm password must be same" />
+			<Label text="Confirm Password" labelFor="cnfPwdInput" />
+        
+        	<Input
+			id="cnfPwdInput"
+			class="sapUiSmallMarginBottom"
+            width="250px"
+			type="Password"
+			placeholder="Re-Enter password"
+			value="{userDetails>/SignUpDetails/cnfpassword}"
+			valueState="None"
+
+			valueStateText="Both password and confirm password must be same"
+			change="onPasswordChange"/>
+            <FlexBox alignItems="Center" justifyContent="Center">
+            <FlexBox class="a"><Button class="sapUiLargeMarginBottom1" type="Emphasized" text="Sign Up" width="250px" press="ToSignIn"/></FlexBox></FlexBox>
+            <FlexBox class="b"><Link class="sapUismallMarginBottom" text="Already have an account" press="onPressSign"></Link></FlexBox>
+            </l:VerticalLayout>
+			</FlexBox>
+			</FlexBox>
+    
+    </content>
+  </Page>
+</mvc:View>
